@@ -10,49 +10,38 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- var price = Math.floor(Math.random() * 100) + 1;
-
- var item_object = {
-   itemName: item,
-   itemPrice: price
- };
-
+ var price = Math.floor(100*(Math.random()));
+ var item_object = {[item]: price};
  cart.push(item_object);
+
  console.log (`${item} has been added to your cart.`);
 }
 
-addToCart(apples)
-addToCart(bananas)
-addToCart(carrots)
-addToCart(daikon)
+addToCart("bananas")
+addToCart("apples")
+addToCart("carrots")
+addToCart("daikon")
 
 function viewCart() {
-  var viewItems = [];
-
-  if(cart.length===0) {
-  console.log ("Your shopping cart is empty")
-
+  var insideCart = [];
+  if (cart.length===0) {
+    console.log("Your shopping cart is empty")
+  } else if(cart.length===1) {
+  var insideCartOne = `In your cart, you have ${Object.key(cart[0])}
+  at $${(cart[0] [Object.keys[0])]}`
+  console.log(insideCartOne)
 } else {
-
-  for(i = 0; i < cart.length; i++) {
-    var item_object = cart[i];
-    var itemName = item_object.itemName;
-    var itemPrice = item_object.itemPrice;
-
-      if (cart.length===1) {
-      viewItems.push(`${itemName} at $${itemPrice}.`);
-
-    }
+  for (i=0; i < cart.length-1; i++) {
+    console.log(cart[i]);
+    insideCart.push(`${Object.keys(cart[i])} at $${cart[i] [Object.keys(cart[i])]}`);
   }
 }
 
-viewCart();
+
+}
 
 function total() {
-  var priceOfItems = [];
-
-  for (i = 0; i < cart.length; i++)
-
+  // write your code here
 }
 
 function removeFromCart(item) {
