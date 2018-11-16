@@ -39,9 +39,17 @@ function viewCart() {
 
 viewCart(cart);
 
-}
+
 
 function total() {
+  var eachItemPrice = [];
+  var totalPrice = 0
+
+  for(var i = 0; i < cart.length; i++) {
+    var itemPrice = cart[i] [Object.keys(cart[i])]
+    eachItemPrice.push(itemPrice)
+
+  }
   // write your code here
 }
 
